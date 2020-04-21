@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "dcf5835e-2430-474c-b04a-ef35a9d7896f",
+		"name": "DigiBAppUserservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registeruser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\t\"userName\":\"john\",\n\t\"firstName\":\"john\",\n\t\"lastName\":\"smith\",\n\t\"password\":\"abc123abc\",\n\t\"email\":\"john@abc.com\",\n\t\"phoneNumber\":\"+65-87979990\"\n}\n"
+				},
+				"url": {
+					"raw": "http://kunals-air:8011/users/register",
+					"protocol": "http",
+					"host": [
+						"kunals-air"
+					],
+					"port": "8011",
+					"path": [
+						"users",
+						"register"
+					]
+				},
+				"description": "register user functionality"
+			},
+			"response": []
+		},
+		{
+			"name": "registeruser error",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\n\t\"firstName\":\"john\",\n\t\"lastName\":\"smith\",\n\t\"password\":\"abc123abc\",\n\t\"email\":\"john@abc.com\",\n\t\"phoneNumber\":\"+65-87979990\"\n}\n"
+				},
+				"url": {
+					"raw": "http://kunals-air:8011/users/register",
+					"protocol": "http",
+					"host": [
+						"kunals-air"
+					],
+					"port": "8011",
+					"path": [
+						"users",
+						"register"
+					]
+				},
+				"description": "register user functionality"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"john\",\n\t\"password\":\"abc123abc\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://kunals-air:8011/users",
+					"protocol": "http",
+					"host": [
+						"kunals-air"
+					],
+					"port": "8011",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login error",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"john\",\n\t\"password\":\"abc123abc\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://kunals-air:8011/users",
+					"protocol": "http",
+					"host": [
+						"kunals-air"
+					],
+					"port": "8011",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://kunals-air:8011/users/john",
+					"protocol": "http",
+					"host": [
+						"kunals-air"
+					],
+					"port": "8011",
+					"path": [
+						"users",
+						"john"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

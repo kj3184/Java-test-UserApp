@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"> 
+  <changeSet author="kunal" id="changelog-1.0">
+    <createTable tableName="users">
+      <column name="id" type="NUMBER">
+        <constraints nullable="false" primaryKey="true" unique="true"/>
+      </column>
+      <column name="user_name" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="true"/>
+      </column>
+      <column name="encrypted_password" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="false"/>
+      </column>
+     <column name="first_name" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="false"/>
+      </column>
+      <column name="last_name" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="false"/>
+      </column>
+      <column name="email" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="false"/>
+      </column>
+      <column name="phone_number" type="TEXT">
+        <constraints nullable="false" primaryKey="false" unique="false"/>
+      </column>
+      <column name="last_login_date" type="Datetime">
+        <constraints nullable="true" primaryKey="false" unique="false"/>
+      </column>
+        <column name="created_by" type="TEXT">
+        <constraints nullable="true" primaryKey="false" unique="false"/>
+      </column>
+      <column name="created_date" type="Datetime">
+        <constraints nullable="true" primaryKey="false" unique="false"/>
+      </column>
+     </createTable>
+     <addAutoIncrement 
+            columnDataType="NUMBER"
+            columnName="id"
+            defaultOnNull="false"
+            generationType="ALWAYS"
+            incrementBy="1"
+            schemaName="public"
+            startWith="100"
+            tableName="users"/>
+  </changeSet>
+  
+</databaseChangeLog> 
